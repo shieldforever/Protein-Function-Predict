@@ -1,0 +1,42 @@
+BP:
+
+no real bp go items: 550
+number of protein prediction accuracy greater than 10.0: 464
+number of protein prediction accuracy greater than 20.0: 385
+number of protein prediction accuracy greater than 30.0: 296
+number of protein prediction accuracy greater than 40.0: 235
+number of protein prediction accuracy greater than 50.0: 221
+number of protein prediction accuracy greater than 60.0: 143
+number of protein prediction accuracy greater than 70.0: 115
+number of protein prediction accuracy greater than 80.0: 109
+number of protein prediction accuracy greater than 90.0: 101
+number of protein prediction accuracy greater than 100.0: 101
+
+MF:
+
+no real mf go items: 845
+number of protein prediction accuracy greater than 10.0: 673
+number of protein prediction accuracy greater than 20.0: 659
+number of protein prediction accuracy greater than 30.0: 625
+number of protein prediction accuracy greater than 40.0: 576
+number of protein prediction accuracy greater than 50.0: 565
+number of protein prediction accuracy greater than 60.0: 430
+number of protein prediction accuracy greater than 70.0: 381
+number of protein prediction accuracy greater than 80.0: 371
+number of protein prediction accuracy greater than 90.0: 362
+number of protein prediction accuracy greater than 100.0: 362
+
+CC:
+
+no real cc go items: 950
+number of protein prediction accuracy greater than 10.0: 710
+number of protein prediction accuracy greater than 20.0: 689
+number of protein prediction accuracy greater than 30.0: 647
+number of protein prediction accuracy greater than 40.0: 586
+number of protein prediction accuracy greater than 50.0: 567
+number of protein prediction accuracy greater than 60.0: 445
+number of protein prediction accuracy greater than 70.0: 410
+number of protein prediction accuracy greater than 80.0: 397
+number of protein prediction accuracy greater than 90.0: 389
+number of protein prediction accuracy greater than 100.0: 389
+

@@ -1,0 +1,58 @@
+BiocManager::install("AnnotationHub")
+BiocManager::install("topGO")
+BiocManager::install("ggplot2")
+BiocManager::install("dplyr")
+BiocManager::install("org.Hs.eg.db")
+BiocManager::install("stringi")
+BiocManager::install("RSQLite")
+BiocManager::install("clusterProfiler")
+library(RSQLite)
+library(AnnotationHub)
+library(topGO)
+library(ggplot2)
+library(dplyr)
+library(org.Hs.eg.db)
+library(clusterProfiler)
+#10.7创建文件夹代码
+rm(list=ls())
+setwd("D:/soft/GO")
+first_file=list.files("spectral-cluster-file")
+first_dir=paste("spectral-cluster-file/",first_file,sep="")
+filepath = "D:/soft/GO/GOenrichment" 
+for(i in 1:n){
+  dir.create(paste(filepath,first_dir[i],sep="/")) 
+}
+#结束
+#10.6富集代码
+rm(list=ls())
+setwd("D:/soft/GO")
+first_file=list.files("spectral-cluster-file")
+first_dir=paste("spectral-cluster-file/",first_file,sep="")
+n=length(first_file)   
+n_sub<-rep(0,n)
+n_sub<-as.data.frame(n_sub)
+n_sub<-t(n_sub)
+eg.list<-list()
+e.list<-list()
+e_ID.list<-list()
+ego.list<-list()
+my_txt<-list()
+#first_dir[315]
+#head(n_sub)  
+for(i in 1:n){
+  second_file=list.files(first_dir[i])#子文件里的所有txt文本名字
+  n_sub[i]=length(second_file) #第二个参数子文件个数
+  second_dir<-paste(first_dir[i],second_file,sep="/")
+  third_dir<-paste(second_dir,sep="/")
+  for (j in 1:(n_sub[i]-1)){
+    my_txt[[j]] <- read.table(third_dir[j],header = FALSE)
+    my_txt[[j]]=my_txt[[j]]$V1
+    eg.list[[j]]=bitr(my_txt[[j]],fromType = "UNIPROT",toType = "ENTREZID",OrgDb = "org.Hs.eg.db")
+    e.list[[j]]<-eg.list[[j]][c(2)]
+    e_ID.list[[j]]=e.list[[j]]$ENTREZID
+    ego.list[[j]]<-enrichGO(e_ID.list[[j]],'org.Hs.eg.db',ont="MF",pvalueCutoff = 0.05)
+    write.csv(ego.list[[j]],file=paste("D:/soft/GO/GOenrichment/",substr(second_dir[j],1,nchar(second_dir[j])-4),".csv",sep=""),row.names=F)
+  }
+}
+#结束
+
