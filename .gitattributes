@@ -1,5 +1,4 @@
 bp-data.zip filter=lfs diff=lfs merge=lfs -text
 ultrapse-file-origin.zip filter=lfs diff=lfs merge=lfs -text
-protein-predict-bp-list-all.zip filter=lfs diff=lfs merge=lfs -text
 protein-predict-cc-list-all.zip filter=lfs diff=lfs merge=lfs -text
 protein-predict-mf-list-all.zip filter=lfs diff=lfs merge=lfs -text
